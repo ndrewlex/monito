@@ -1,0 +1,60 @@
+@use "../../styles/breakpoint" as b;
+
+.dog_categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  margin: -6px;
+
+  .category_card {
+    aspect-ratio: calc(185 / 317);
+    background-color: var(--white);
+    border-radius: 12px;
+    margin: 6px;
+    box-shadow: 0px 4px 28px -2px #00000014;
+    display: flex;
+    flex-direction: column;
+
+    .image_wrapper {
+      position: relative;
+      aspect-ratio: 1;
+      width: calc(100% - 16px);
+      margin: 8px auto;
+      img {
+        border-radius: 12px;
+      }
+    }
+
+    .description {
+      margin: 0 8px 8px;
+      .title {
+        color: #00171f;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      .info {
+        color: #667479;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+@include b.breakpoint(large) {
+  .dog_categories {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: -10px;
+
+    .category_card {
+      aspect-ratio: 280 / 378;
+      margin: 10px;
+
+      .description {
+        padding: 8px;
+      }
+    }
+  }
+}

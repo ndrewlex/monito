@@ -1,0 +1,42 @@
+$breakpoint_map: (
+  small: (
+    min-width: 414px,
+  ),
+  medium: (
+    min-width: 600px,
+  ),
+  large: (
+    min-width: 1280px,
+  ),
+  xlarge: (
+    min-width: 1440px,
+  ),
+) !default;
+
+/**
+    // this
+    @use '@tiket/passport-design-tokens/breakpoint' as b;
+  
+    @include b.breakpoint(desktop) {
+      .my_class {}
+    }
+  
+    // will be compiled to this
+    @media (min-width: 840px) {
+      .my_class {}
+    }
+   */
+@mixin breakpoint($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoint_map, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoint_map, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn’t exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved `#{$breakpoint}`. " + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

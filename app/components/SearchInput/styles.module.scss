@@ -1,0 +1,25 @@
+.search_input {
+  border-radius: 46px;
+  position: relative;
+
+  .icon {
+    position: absolute;
+    width: 20px;
+    top: 12px;
+    left: 12px;
+  }
+
+  input {
+    padding: 12px 20px 12px 44px;
+    border-radius: 46px;
+    border: none;
+    &:focus {
+      border: none;
+      outline: none;
+    }
+    &::placeholder {
+      color: var(--neutral-gray-40);
+      font-weight: 500;
+    }
+  }
+}
