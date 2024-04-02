@@ -14,9 +14,11 @@ const DogCategories = () => {
             <div className={styles.description}>
               <p className={styles.title}>{item.title}</p>
               <p className={styles.info}>
-                Gene: {item.genre} Age: {item.age}
+                Gene: <span className="bold-700">{item.gene}</span>{" "}
+                <span className={styles.dot}> · </span> Age:{" "}
+                <span className="bold-700">{item.age}</span>
               </p>
-              <p>{item.price}</p>
+              <p className={styles.price}>{item.price}</p>
             </div>
           </div>
         );

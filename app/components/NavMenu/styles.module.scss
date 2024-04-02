@@ -1,0 +1,65 @@
+@use "../../styles/breakpoint" as b;
+
+.nav_menu {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13.5px 16px;
+
+  .hamburger_icon,
+  .logo_icon,
+  .search_icon {
+    cursor: pointer;
+  }
+
+  .nav_menu_main,
+  .nav_menu_addons {
+    display: none;
+  }
+}
+
+@include b.breakpoint(large) {
+  .nav_menu {
+    justify-content: flex-start;
+    padding: 28px 130px;
+
+    .logo_icon {
+      margin-right: 24px;
+    }
+
+    .hamburger_icon,
+    .search_icon {
+      display: none;
+    }
+
+    .nav_menu_main {
+      display: flex;
+      align-items: center;
+
+      > a {
+        padding-left: 24px;
+        padding-right: 24px;
+        font-weight: 700;
+        text-decoration: none;
+        color: var(--primary-blue);
+      }
+    }
+
+    .nav_menu_addons {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+
+      > * {
+        margin: 0px 7px;
+      }
+
+      .currency {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

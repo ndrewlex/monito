@@ -2,7 +2,24 @@
   background-color: var(--primary-blue);
   color: var(--neutral-white);
   border-radius: 57px;
-  border: none;
-  padding: 14px 28px;
+  padding: 12.5px 26.5px;
+  border: 1.5px solid var(--primary-blue);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-md);
   cursor: pointer;
+
+  &.secondary {
+    background-color: transparent;
+    color: var(--primary-blue);
+  }
+
+  &.sm {
+    padding: 12px 28px;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+  }
+
+  &.full_width {
+    width: 100%;
+  }
 }

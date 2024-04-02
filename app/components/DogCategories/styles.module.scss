@@ -26,24 +26,42 @@
 
     .description {
       margin: 0 8px 8px;
+
+      > * {
+        margin-top: 4px;
+        &:first-of-type {
+          margin-top: 0;
+        }
+      }
+
       .title {
         color: #00171f;
         font-weight: 700;
-        font-size: 16px;
-        line-height: 24px;
+        font-size: var(--font-size-t4);
+        line-height: var(--line-height-t4);
       }
 
       .info {
         color: #667479;
         font-weight: 500;
-        font-size: 12px;
-        line-height: 18px;
+        font-size: var(--font-size-xs);
+        line-height: var(--line-height-xs);
+
+        span.dot {
+          padding: 0 8px;
+          font-weight: 700;
+        }
+      }
+
+      .price {
+        font-size: var(--font-size-sm);
+        font-weight: 700;
       }
     }
   }
 }
 
-@include b.breakpoint(large) {
+@include b.breakpoint(medium) {
   .dog_categories {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: -10px;
@@ -54,6 +72,10 @@
 
       .description {
         padding: 8px;
+
+        .price {
+          font-size: var(--font-size-xs);
+        }
       }
     }
   }

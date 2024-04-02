@@ -1,4 +1,4 @@
-export const NavMenus = [
+export const menuConfigs = [
   {
     label: "Home",
   },

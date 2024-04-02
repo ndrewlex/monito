@@ -6,6 +6,7 @@ import clsx from "clsx";
 type SearchInputProps = {
   className?: string;
 };
+
 const SearchInput = ({ className }: SearchInputProps) => {
   return (
     <div className={clsx(styles.search_input, className)}>

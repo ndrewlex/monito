@@ -3,49 +3,39 @@
 section.hero {
   position: relative;
   width: 100%;
-  height: 100vh;
-  background-image: url("/hero.png");
+  height: 80vh;
+  background-image: url("/hero-mobile.png");
   background-size: cover;
   background-position: center;
-  padding: 0 16px;
-
-  nav {
-    display: flex;
-    align-items: center;
-    padding: 13.5px 0;
-
-    > a {
-      font-weight: 600;
-      text-decoration: none;
-      margin-right: 48px;
-      color: var(--primary-blue);
-    }
-  }
+  background-repeat: no-repeat;
 
   .hero_content {
-    margin-top: 80px;
-    max-width: 465px;
+    padding: 35px 16px 0;
+    box-sizing: content-box;
+
+    h1,
+    h2 {
+      font-weight: 700;
+    }
 
     h1 {
-      font-weight: 800;
-      font-size: 60px;
-      line-height: 68px;
+      font-size: var(--font-size-t1);
+      line-height: var(--line-height-t1);
       color: var(--primary-dark-blue);
     }
 
     h2 {
-      font-weight: 700;
-      font-size: 46px;
-      line-height: 60px;
+      font-size: var(--font-size-t2);
+      line-height: var(--line-height-t2);
       color: var(--primary-dark-blue);
     }
 
     p {
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 24px;
       color: var(--neutral-black-80);
-      margin: 24px 0 34px;
+      font-weight: 500;
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-xs);
+      margin: 12px 0 32px;
     }
   }
 
@@ -54,25 +44,100 @@ section.hero {
     button {
       margin-right: 14px;
     }
+
+    .btn_play {
+      display: flex;
+      align-items: center;
+
+      > span {
+        margin-right: 8px;
+      }
+
+      > svg {
+        border: 1px solid var(--primary-blue);
+        border-radius: 50%;
+      }
+    }
   }
 }
 
 section.dog_category {
   padding: 40px 16px;
+
+  .view_more_categories {
+    width: 100%;
+    margin-top: 16px;
+  }
+
   .dog_category_heading {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 28px;
+
+    button {
+      display: none;
+    }
+
+    .title {
+      p {
+        font-size: var(--font-size-t4);
+        line-height: var(--line-height-t4);
+      }
+
+      h2 {
+        color: var(--primary-blue);
+        font-weight: 700;
+        font-size: var(--font-size-t3);
+        line-height: var(--line-height-t3);
+      }
+    }
+  }
+}
+
+@include b.breakpoint(medium) {
+  section.hero {
+    background-image: url("/hero.png");
+    background-position: left;
+
+    .hero_content {
+      padding: 35px 16px 0;
+      max-width: 465px;
+
+      p {
+        margin: 24px 0 34px;
+        font-size: var(--font-size-sm);
+        line-height: var(--line-height-sm);
+      }
+    }
+  }
+
+  section.dog_category {
+    .dog_category_heading button {
+      display: block;
+    }
+
+    .view_more_categories {
+      display: none;
+    }
   }
 }
 
 @include b.breakpoint(large) {
   section.hero {
-    padding: 0 130px;
-    nav {
-      padding: 28px 0;
+    background-image: url("/hero.png");
+    height: 90vh;
+
+    .hero_content {
+      padding: 80px 130px;
+      max-width: 465px;
+
+      p {
+        margin: 24px 0 34px;
+      }
     }
   }
+
   section.dog_category {
     padding: 60px 130px;
   }
